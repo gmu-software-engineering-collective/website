@@ -1,0 +1,17 @@
+# Default ownership
+* @gmu-software-engineering-collective/coordinators
+
+# Frontend-related paths
+/frontend/ @gmu-software-engineering-collective/frontend-pod
+
+# Backend-related paths
+/backend/ @gmu-software-engineering-collective/backend-pod
+
+# DevOps and CI/CD
+/.github/workflows/ @gmu-software-engineering-collective/devops-pod
+
+# Tests and QA
+/tests/ @gmu-software-engineering-collective/qa-pod
+
+# Documentation
+/docs/ @gmu-software-engineering-collective/coordinators

@@ -1,0 +1,60 @@
+name: Engineering Task
+description: Create a planned engineering task
+title: "[Task]"
+labels: []
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for planned engineering work.
+        A task must satisfy the Definition of Ready before implementation begins.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem are we trying to solve?
+      placeholder: Describe the problem clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should be true when this task is complete?
+      placeholder: Describe the desired outcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List the specific conditions that must be satisfied for this task to be complete.
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+        - [ ] Criterion 3
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: List blocking issues or dependencies. Write "None" if there are none.
+      placeholder: "None"
+    validations:
+      required: true
+
+  - type: textarea
+    id: research
+    attributes:
+      label: Required Research
+      description: Identify any research required before implementation. Write "None" if no research is required.
+      placeholder: "None"
+    validations:
+      required: true

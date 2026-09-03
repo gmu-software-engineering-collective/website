@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Ask in Discord
+    url: https://discord.gg/qgBDeD8ARV
+    about: Questions and help that do not need a GitHub Issue
