@@ -72,3 +72,28 @@ See [SECURITY.md](SECURITY.md) for security requirements and vulnerability repor
 - **Owning Pod:** TBD
 - **Coordinator:** TBD
 - **Last Updated:** TBD
+
+## Frontend setup
+
+### Prerequisites
+
+- Node.js LTS
+- npm
+
+### Run locally
+
+From the repository root:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open the local URL shown in the terminal, usually `http://localhost:5173`.
+
+### Frontend structure
+
+- `frontend/src/pages` — complete website pages
+- `frontend/src/components` — reusable UI components
+- `frontend/src/styles` — shared styles
