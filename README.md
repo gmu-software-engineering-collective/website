@@ -97,3 +97,15 @@ Open the local URL shown in the terminal, usually `http://localhost:5173`.
 - `frontend/src/pages` — complete website pages
 - `frontend/src/components` — reusable UI components
 - `frontend/src/styles` — shared styles
+
+- ## Frontend CI
+
+A GitHub Actions workflow (`.github/workflows/frontend-ci.yml`) automatically checks the React frontend. It runs on pull requests targeting `main` when files in `frontend/` (or the workflow file itself) change.
+
+The check does three things, in order:
+
+1. `npm ci` installs the dependencies from the lockfile.
+2. `npm run lint` checks the code with ESLint.
+3. `npm run build` confirms the app builds.
+
+The workflow uses no secrets and only has read access to the repository.
