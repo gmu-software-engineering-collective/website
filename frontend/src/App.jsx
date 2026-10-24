@@ -1,4 +1,5 @@
 import SiteHeader from './components/SiteHeader'
+import SiteFooter from './components/SiteFooter'
 import HomePage from './pages/HomePage'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <SiteHeader />
       <HomePage />
+      <SiteFooter />
     </>
   )
 }
