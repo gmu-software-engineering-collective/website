@@ -1,12 +1,29 @@
+import HeroSection from "./home/HeroSection";
+import AboutSection from "./home/AboutSection";
+import HowWeWorkSection from "./home/HowWeWorkSection";
+import ProjectsSection from "./home/ProjectsSection";
+import StartHereSection from "./home/StartHereSection";
+import LearningSection from "./home/LearningSection";
+import ProcessSection from "./home/ProcessSection";
+import PublicReposSection from "./home/PublicReposSection";
+import PodsSection from "./home/PodsSection";
+import JoinSection from "./home/JoinSection";
+
 function HomePage() {
-    return (
-        <main>
-            <h1>
-                Software Engineering Collective
-                <p> Build read software. Learn the engineer workflow</p>
-            </h1>
-        </main>
-    )
+  return (
+    <main>
+      <HeroSection />
+      <AboutSection />
+      <HowWeWorkSection />
+      <ProjectsSection />
+      <StartHereSection />
+      <LearningSection />
+      <ProcessSection />
+      <PublicReposSection />
+      <PodsSection />
+      <JoinSection />
+    </main>
+  );
 }
 
-export default HomePage
+export default HomePage;
