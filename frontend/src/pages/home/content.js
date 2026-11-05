@@ -15,12 +15,19 @@ export const NAV_LINKS = [
 
 export const TOOLS = ["GitHub", "React", "Django", "PostgreSQL", "Docker", "GitHub Actions", "Figma", "Discord"];
 
+export const ABOUT = {
+  intro: "Leaders facilitate, they don't lecture. Everything is written down, so anyone can catch up and the club outlives its founders.",
+  mission: "We're building a software engineering organization, not a coding club: a place where students learn how real teams plan, design, build, review, and ship software together.",
+  vision: "A professionally run student engineering org where every member leaves with portfolio-quality work and experience that carries into internships and full-time roles.",
+};
+
 export const DIFFERENCES = [
-  { not: "Learning by watching slides", is: "Learning by building real systems and shipping features" },
-  { not: "Leaders are the experts", is: "Leaders are facilitators. Nobody pretends to know everything" },
-  { not: "Knowledge is lost every year", is: "Documentation first. The club outlives its founders" },
-  { not: "One messy process", is: "A repeatable process for every project, every semester" },
+  "Building and shipping real systems",
+  "Leaders as facilitators",
+  "Documentation first",
+  "One repeatable process",
 ];
+
 
 export const WORKFLOW_STEPS = ["Issue", "Design", "Review", "Ship"];
 
