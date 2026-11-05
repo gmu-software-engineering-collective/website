@@ -49,7 +49,10 @@ function SiteHeader() {
   return (
     <header className={classNames} onKeyDown={(event) => event.key === "Escape" && closeMenu()}>
       <div className="container site-nav__inner">
-        <a className="site-nav__brand" href="#top">Software Engineering Collective</a>
+        <a className="site-nav__brand" href="#top">
+          <img className="site-nav__logo" src="/favicon.svg" alt="" width="28" height="28" />
+          Software Engineering Collective
+        </a>
 
         <button
           className="site-nav__toggle"

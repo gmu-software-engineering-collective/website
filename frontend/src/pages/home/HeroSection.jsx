@@ -5,7 +5,7 @@ function HeroSection() {
     <section className="hero" id="top">
       <div className="container">
         <p className="eyebrow">Software Engineering Collective at GMU</p>
-        <h1>Learn Software Engineering the Way Real Teams Work</h1>
+        <h1>Build Software Like a Real Engineering Team</h1>
         <p className="hero__lead">
           A student engineering organization where members plan, design, build,
           review, and ship real software together. No experience needed.
