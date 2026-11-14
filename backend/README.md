@@ -75,4 +75,60 @@ Expected response:
 
 ## Run tests
 
-python manage.py test
+    python manage.py test
+
+# Projects API
+
+## 1.  Apply migrations
+
+    python manage.py migrate
+
+# 2.  Create a local admin user
+
+    python manage.py createsuperuser
+
+    Enter a username, an optional email, and a password when prompted. This account exists only in your local database.
+
+# 3. Manage projects in Django Admin
+
+Start the server:
+
+    python manage.py runserver
+
+    Open http://127.0.0.1:8000/admin/, log in, and add a project. A project is only returned by the API when **Published** is checked. It is unchecked by default.
+
+# 4. Get published projects
+
+    curl -i http://127.0.0.1:8000/api/projects
+
+Expected response: `HTTP/1.1 200 OK` with a JSON object containing a `projects` list, newest first. Unpublished projects are not included.
+
+```json
+{
+  "projects": [
+    {
+      "title": "Example Project",
+      "slug": "example-project",
+      "summary": "A short summary.",
+      "description": "A longer description.",
+      "status": "planning",
+      "repository_url": "",
+      "created_at": "2026-11-13T12:00:00+00:00",
+      "updated_at": "2026-11-13T12:00:00+00:00"
+    }
+  ]
+}
+```
+
+The list is wrapped in a `projects` key so more fields can be added later without breaking clients. The route has no trailing slash, so `/api/projects/` returns `404`.
+
+`status` is one of `planning`, `in_progress`, or `completed`.
+
+# 5. Run the tests
+
+    python manage.py test
+
+
+The tests use a temporary database that Django creates and destroys automatically, so your local data is not affected. If you see `permission denied to create database`, give your PostgreSQL user permission in `psql postgres`:
+
+ALTER USER your_db_user CREATEDB;
