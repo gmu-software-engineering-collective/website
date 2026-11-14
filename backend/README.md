@@ -75,4 +75,29 @@ Expected response:
 
 ## Run tests
 
-python manage.py test
+    python manage.py test
+
+## Backend CI
+
+A GitHub Actions workflow (`.github/workflows/backend-ci.yml`) automatically checks the Django backend. It runs on pull requests targeting `main` when files in `backend/` (or the workflow file itself) change.
+
+The check does four things, in order:
+
+1. Sets up Python 3.14.
+2. Installs dependencies from `requirements.txt`.
+3. Runs `python manage.py check` to catch configuration problems.
+4. Runs `python manage.py test` to run the test suite.
+
+### Why it uses a temporary database
+
+The Django tests need a real PostgreSQL database. The workflow starts a throwaway PostgreSQL container for each run and waits for its health check to pass before the tests begin. The database is deleted when the job ends, so tests never touch real data and don't depend on anyone's local setup.
+
+The database and Django settings in the workflow are test-only placeholder values. No real passwords, secret keys, or GitHub secrets are used.
+
+### Viewing results and failure logs
+
+1. Open your pull request and go to the **Checks** tab.
+2. Select the **Backend CI** workflow.
+3. If a step failed, click it to expand its log and read the error.
+
+Fix the problem, push again, and the check re-runs automatically.
