@@ -1,0 +1,44 @@
+name: Backend CI
+on: 
+  pull_request:
+    branches: ['main']
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-ci.yml'
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env: #these are not meant to be used real-world.
+      DJANGO_SECRET_KEY: 123456789
+      POSTGRES_DB: testing-database
+      POSTGRES_USER: testing-user
+      POSTGRES_PASSWORD: testingpassword
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: testing-user
+          POSTGRES_PASSWORD: testingpassword
+          POSTGRES_DB: testing-database
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: pip install -r requirements.txt
+        working-directory: backend
+      - run: python manage.py check
+        working-directory: backend
+      - run: python manage.py test
+        working-directory: backend
